@@ -1,12 +1,15 @@
-import { RouterProvider } from 'react-router-dom';
-import { ConfigProvider } from 'antd';
-import viVN from 'antd/locale/vi_VN';
-import router from '@/routes';
+import { RouterProvider } from "react-router-dom";
+import { ConfigProvider, App as AntApp } from "antd";
+import viVN from "antd/locale/vi_VN";
+import { houTheme } from "@/config/theme";
+import router from "@/routes";
 
 const App = () => {
   return (
-    <ConfigProvider locale={viVN}>
-      <RouterProvider router={router} />
+    <ConfigProvider locale={viVN} theme={houTheme}>
+      <AntApp>
+        <RouterProvider router={router} />
+      </AntApp>
     </ConfigProvider>
   );
 };

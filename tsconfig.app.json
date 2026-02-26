@@ -24,9 +24,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    "ignoreDeprecations": "6.0",
-    /* Base Url */
-    "baseUrl": ".",
+    /* Path aliases (resolved relative to tsconfig dir) */
     "paths": {
       "@/*": ["./src/*"]
     }

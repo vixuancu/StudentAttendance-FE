@@ -12,7 +12,9 @@ import type { LoginRequest, CurrentUser } from "@/types";
 const authService = {
     login: async (data: LoginRequest): Promise<CurrentUser> => {
       const res = await authApi.login(data);
-      const { access_token } = res.data.data;
+      console.log("Login response:", res);
+      const { access_token } = res.data.data.token;
+      console.log("đã nhân được token:", access_token);
 
       // Decode JWT payload để lấy user info (không cần gọi API /me)
       const payload = JSON.parse(atob(access_token.split('.')[1]));
